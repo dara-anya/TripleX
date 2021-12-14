@@ -7,8 +7,17 @@
 // The codes add-up to --
 // "Enter the three code numbers followed by x"
 
-/*MAIN FUNCTION*/
-int main()
+void PrintIntroduction(){
+    /*EXPRESSION STATEMENTS*/
+
+    // Print welcome messages to the terminal
+    //std::cout << std::endl;
+    std::cout << "\n Upon boarding the abondoned alien vessel, you see a computer terminal...\n";
+    // std::cout << std::endl; //endl = End Line - creates a new line
+    std::cout << "You need to enter the corret code to access the ship's log...\n";
+    //std::cout << std::endl;
+}
+void PlayGame()
 {
     //std::cout << "Hello, World!"; //expression to output messages to terminal
     // std (meaning standard) is a Namespace - used to prevent name conflicts in the code
@@ -17,34 +26,59 @@ int main()
     // << directing towards the desired output the "Hello World" string
     // A String is a sequence of characters
 
-/*EXPRESSION STATEMENTS*/
-
-    // Print welcome messages to the terminal
-    std::cout << std::endl;
-    std::cout << "Upon boarding the abondoned alien vessel, you see a computer terminal...";
-    std::cout << std::endl; //endl = End Line - creates a new line
-    std::cout << "You need to enter the corret code to access the ship's log...";
-    std::cout << std::endl;
+    PrintIntroduction();
 
 /*DECLARATION STATEMENTS*/ // An expresion followed by a ';' is an Expression Statment.
 
     //Declare 3 number code
-    const int a = 4; //initialized variable, int = datatype "a" = variable name, 4 = value
-    const int b = 16; // 'const' makes the variable a constant so that the value cannot be changed after declaration
+    const int CodeA = 4; //initialized variable, int = datatype "a" = variable name, 4 = value
+    const int CodeB = 16; // 'const' makes the variable a constant so that the value cannot be changed after declaration
 
-    const int c = 32; //
+    const int CodeC = 32; //
 
 
-    const int sum = a + b + c; 
-    const int product = a * b * c;
+    const int CodeSum = CodeA + CodeB + CodeC; 
+    const int CodeProduct = CodeA * CodeB * CodeC;
 
 /*EXPRESSION STATEMENT*/
 
-    //Print sume and product into terminal
+    //Print CodeSum  and CodeProduct into terminal
     std::cout << std::endl;
-    std::cout << sum << std::endl;
-    std::cout << product <<std::endl;
+    std::cout << "There are three numbers in the code\n";
+    std::cout << "\n The codes add-up to: " << CodeSum;
+    std::cout << "\n The codes multiply to give: " << CodeProduct;
 
+    int GuessA, GuessB, GuessC; 
+    std::cout << "\n\n Guess the three-number code. Insert a space between each number.\n";
+    // Store player guess
+    std::cin >> GuessA >> GuessB >> GuessC;
+
+    //std::cout << "You entered: " << GuessA << GuessB << GuessC << std::endl;
+
+    int GuessSum = GuessA + GuessB + GuessC;
+    int GuessProduct = GuessA *  GuessB * GuessC;
+    //std::cout << "Your guess adds-up to: " << GuessSum << std::endl;
+   // std::cout << "Your guess multiply to give: " << GuessProduct <<std::endl;
+
+    //Check if the player's guess is correct 
+    if (CodeSum == GuessSum && CodeProduct == GuessProduct)
+    {
+        std::cout << "Access Granted.\n";
+        std::cout << "The terminal unlocks.\n";
+    }
+    else{
+        std::cout << "Access Denied.\n";
+        std::cout << "The terminal remains locked. The number '2' appears on the side of the terminal.\n" <<
+        "You interpret this as having two remaining attempts to unlock the terminal until a security protocal is initiated...whatever that may mean.\n" <<
+        "Would you like to continue?";
+    }
+}
+
+
+/*MAIN FUNCTION*/
+int main()
+{
+    PlayGame();
 /*RETURN STATEMENT*/
-    return 0.0; 
+    return 0; 
 }
