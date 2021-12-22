@@ -128,6 +128,12 @@ int main(){
         return 0;
     }
     std::cout << "\nYou have successfully unlocked the terminal";
+    std::cout << "\n\nIn the terminal you read about the Alien race known as the Hishari, who were fighting an inner planetary war, which their vessel was a casualty of.";
+    std::cout << "\nA map appears on the terminal screen. A map with an equation. You recognize it as a derivative of the Drake Equation.";
+    std::cout << "\nHowever, instead of calculating the number of active, communicative extraterrestrial civilizations in the Milky Way Galaxy, it calculates the number of civilizations in parallel universes.";
+    std::cout << "\n\nYou return to your ship and relay the information to the Federation.";
+    std::cout << "\nThey respond to you with a new mission: to follow the map and to investigate its legitamacy, to seek out these parallel universes.";
+    std::cout << "\n\nTO BE CONTINUED...";
     std::cout << "\n\nThanks for playing.";
     return 0; 
 }
