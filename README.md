@@ -25,7 +25,7 @@ Guess the three-digit code. Insert a space between each digit:
 **Gameplay**
 
 There are three levels to the terminal in where you must decipher the three-digit code. 
-A word of caution, don't guess by compulsion. This is an unkown alien species, who knows what type of security measures they have in place should you guess wrong too many times.
+A word of caution, don't guess purely by compulsion. This is an unkown alien species, who knows what type of security measures they have in place should you guess wrong too many times.
 
 **Thanks for playing the game! I hope you have fun!**
 
