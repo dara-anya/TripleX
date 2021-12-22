@@ -11,23 +11,22 @@ The terminal is locked by a three-digit code. You are given the sum and product 
 ```
 The code adds-up to: 3
 The code multiplies to give: 1
+
+Guess the three-digit code. Insert a space between each digit:
 ```
+<details><summary>Solution</summary>
+  
+  ```
+  1 1 1
+  ```
+  
+</details>
 
-" beceause 1 + 1 + 1 = 3 and 1 * 1 * 1 = 1
+**Gameplay**
 
+There are three levels to the terminal in where you must decipher the three-digit code. 
+A word of caution, don't guess by compulsion. This is an unkown alien species, who knows what type of security measures they have in place should you guess wrong too many times.
 
+**Thanks for playing the game! I hope you have fun!**
 
-
-'require "**scientists"'**
-/* 
-In this game there are three numbers in a code
-The code multiplies to give --
-The code adds-up to give --
-The user must guess the three digit code
-*/
-
-```c++
-const int require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
+Special thanks to Udemy. The initialization for this game stems from the first assignment of the **Unreal Engine C++ Developer** course.
