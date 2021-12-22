@@ -12,15 +12,7 @@ The user must guess the three digit code
 void PrintIntroduction(int Difficulty){
     std::cout << "\n\nA distress signal has brought you aboard an abondoned alien vessel. You see a computer terminal. " <<
     "There are three unilluminated lights above the terminal." << 
-    "\nYou need to enter the corret code to unlock the terminal, access the ship's log, and find out what happened...\n";
-}
-
-int PlayAttempts (int Attempts){
-    int Attempts = 3;
-    Attempts--;
-    return Attempts;
-    std::cout << Attempts;
-   
+    "\nYou need to enter the correct code to unlock the terminal, access the ship's log, and find out what happened...\n";
 }
 
 bool PlayGame(int Difficulty, int Attempts){
@@ -69,9 +61,12 @@ bool PlayGame(int Difficulty, int Attempts){
         std::cout << "\nYou hear a tone. No lights illuminate.";
         std::cout << "\nYou have input the incorrect code.";
 
-        PlayAttempts(Attempts);
-        std::cout << "\n\nThe number " << Attempts << " appears on the terminal. You interpret this as having two more attempts to guess the correct code."; 
-        std::cout << "\nBe Careful. Who knows what will happen when all atempts are gone...\n";
+        if (Attempts != 0) {
+            std::cout << "\n\nThe number " << Attempts << " appears on the terminal. You interpret this as the number of attempts remaining to guess the correct code."; 
+            std::cout << "\nBe Careful. Who knows what will happen when there are no more attempts...\n";
+        } else{
+            std::cout << "\n\nThe number " << Attempts << " appears on the terminal. \nYou have no attempts remaining.\n";
+        }        
 
         return false;
     }
@@ -81,12 +76,13 @@ int main(){
     srand(time(NULL)); //Creates new random sequences based on the time of day
     int LevelDifficulty = 1;
     const int MaxDifficulty = 3;
-    int Attempts = 3;
+
+    int Attempts = 2;
 
     PrintIntroduction(LevelDifficulty);
 
     //Loop game until all levels completed
-    while (LevelDifficulty <= MaxDifficulty){ 
+    while (LevelDifficulty <= MaxDifficulty && Attempts > -1){ 
         bool bLevelComplete = PlayGame(LevelDifficulty, Attempts); //All boolean variables must start with lowercase 'b' in Unreal Engine
 
         // notice if input letter for GuessCode creates endless loop --> this causes an error
@@ -105,9 +101,33 @@ int main(){
                 std::cout << "_________\n";
             }
 
+        } else{
+            //decrease number of attempts
+            Attempts --;
         }
+
     }
 
-    std::cout << "\nYou have access to the terminal.";
+    if (Attempts < 0){
+        std::cout << "\nYou hear several tones proliferate throughout the ship...";
+        Beep(100,500);
+        Beep(200,500);
+        Beep(300,500);
+        Beep(400,500);
+        Beep(500,500);
+        Beep(600,500);
+        Beep(700,500);
+        Beep(800,500);
+        Beep(900,500);
+        std::cout << "\n\nThen silence...";
+        Sleep (5000);
+        std::cout << "\n\nYou hear explosions grow closer and closer to you. The ship explodes. The alien vessel, your crew and you are lost in the emptiness of space.";
+        std::cout << "\n\nThe number of attempts reached zero, which triggered the self-destruct sequence.";
+        std::cout << "\n\nGAME OVER!";
+        std::cout << "\n\nThanks for playing.";
+        return 0;
+    }
+    std::cout << "\nYou have successfully unlocked the terminal";
+    std::cout << "\n\nThanks for playing.";
     return 0; 
 }
